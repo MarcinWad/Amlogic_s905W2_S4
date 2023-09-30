@@ -1,3 +1,4 @@
+
 # Amlogic_s905W2_S4
 Info about Amlogic S905W2
 
@@ -7,7 +8,7 @@ When you flash wrong bootloader for Your device, there is a way to boot it from 
 
 When bootloader is damaged or erased you will see on UART something like this:
 `S4:BL:25dcde;ID:00D9A30840B12824;FEAT:30F:1FFF0000:B002F:19;POC:FF;RCY:0;OVD:0;DFU:0S4:BL:25dcde;ID:00D9A30840B12824;FEAT:30F:1FFF0000:B002F:19;POC:FF;RCY:0;OVD:0;DFU:0;eMMC:0;RD-0:0;CHK:0;`
-It means that devices is in recovery mode using Amlogic new ADNL protocol. To fix this you need:
+It means that device is in recovery mode using Amlogic new ADNL protocol. To fix this you need:
 
 1. USB Male cable (both sides)
 2. Original firmware (or slimbox firmware) to have to files: `DDR.USB` and `bootloader.PARTITION`
@@ -40,22 +41,22 @@ should return:
 `OKAY [  0.045s]`
 `finished. total time: 0.046s`
 
-6. On UART console you should see:
+7. On UART console you should see:
 `INFO: bl2_load_bl2ex start!`
 `INFO: load ...`
 `Load: BL2E From: USB - 1.0 src: 00002000, dst: 00fffff0, size: 00011000`
 
-7. Load BL3 (U-Boot) from `bootloader.PARITION`:
+8. Load BL3 (U-Boot) from `bootloader.PARITION`:
 `adnl  bl2_boot -f bootloader.PARTITION`
 and result should be booting U-Boot from RAM.
 
-8. Interrupt it on command line befere autoboot. Place USB stick into second USB port in BOX and flash it to MMC:
+9. Interrupt it on command line befere autoboot. Place USB stick into second USB port in BOX and flash it to MMC:
 `usb start`
 `usb_update bootloader bootloader.PARTITION`
 and you should see:
 `BURN bootloader.PARTITION to part bootloader OK!
 `=====>Burn part bootloader in fmt normal OK<======
-9. Disconnect USB cable and issue `reset` in U-Boot command line. Box should work again.
+10. Disconnect USB cable and issue `reset` in U-Boot command line. Box should work again.
 
 
 
