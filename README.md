@@ -1,6 +1,6 @@
 
 # Amlogic_s905W2_S4
-Info about Amlogic S905W2
+Info about Amlogic S905W2 ANDL recovery procedure
 
 ## Recover from erase bootloader
 
@@ -11,8 +11,8 @@ When bootloader is damaged or erased you will see on UART something like this:
 It means that device is in recovery mode using Amlogic new ADNL protocol. To fix this you need:
 
 1. USB Male cable (both sides)
-2. Original firmware (or slimbox firmware) to have to files: `DDR.USB` and `bootloader.PARTITION`
-3. ADNL Tools (can get from this repo for Windows)
+2. Original firmware (or slimbox firmware) to have 2 files: `DDR.USB` and `bootloader.PARTITION`
+3. ADNL Tools (you can get from this repo for Windows)
 4. Amlogic USB drivers
 5. FAT32 formatted USB drive
 
