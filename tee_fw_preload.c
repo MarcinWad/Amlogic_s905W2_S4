@@ -1,5 +1,8 @@
 /* AmLogic Video TEE Loader based on decompilation of original tee_preload_fw from Android Video Player */
 /* Compile with: gcc tee_fw_preload.c.c -o tee_fw_preload -lteec */
+/* From original device You need two files video_ucode.bin and .ta file from /vendor/lib/teetz */
+/* Place .ta file in /lib/teetz/ and load video_ucode.bin using this tool */
+/* Video decoder is enabled */
 
 #include "tee_client_api.h"
 
